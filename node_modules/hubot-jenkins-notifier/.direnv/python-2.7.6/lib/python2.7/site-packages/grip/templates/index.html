@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}{% if filename %}{{ filename }} - {% endif %}Grip{% endblock %}
+
+{%- block styles -%}
+  {%- for style_url in style_urls -%}
+    <link rel="stylesheet" href="{{ style_url }}" />
+  {% endfor -%}
+  {%- if styles %}
+    <style>
+      {% for style in styles -%}
+      {{ style|safe }}
+      {% endfor -%}
+    </style>
+  {% endif -%}
+  <style>
+    /* Page tweaks */
+    .preview-page {
+      margin-top: 64px;
+    }
+    /* Discussion tweaks */
+    .discussion-timeline.wide {
+      width: 920px;
+    }
+    .timeline-comment-wrapper > .timeline-comment:after,
+    .timeline-comment-wrapper > .timeline-comment:before {
+      content: none;
+    }
+  </style>
+{%- endblock -%}
+
+{%- block scripts -%}
+  <script>
+    function showCanonicalImages() {
+      var images = document.getElementsByTagName('img');
+      if (!images) {
+        return;
+      }
+      for (var index = 0; index < images.length; index++) {
+        var image = images[index];
+        if (image.getAttribute('data-canonical-src')) {
+          image.src = image.getAttribute('data-canonical-src');
+        }
+      }
+    }
+    function scrollToHash() {
+      if (location.hash && !document.querySelector(":target")) {
+        var elements = document.getElementsByName('user-content-' + location.hash.slice(1));
+        if (elements.length > 0) {
+          elements[elements.length - 1].scrollIntoView();
+        }
+      }
+    }
+    window.onhashchange = function() {
+      scrollToHash();
+    }
+    window.onload = function() {
+      scrollToHash();
+    }
+    showCanonicalImages();
+  </script>
+{%- endblock -%}
+
+{%- block page -%}
+  <div class="preview-page">
+    <div class="container">
+      <div class="repository-with-sidebar repo-container {{ 'with-full-navigation' if not render_wide }}">
+
+        {% if discussion %}
+          <div class="discussion-timeline {{ 'wide' if render_wide }}">
+            <div class="timeline-comment-wrapper">
+              <div class="timeline-comment">
+                <div class="comment">
+                  <div class="comment-content">
+                    <div class="comment-body markdown-body markdown-format">
+                      {{ content|safe }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="repository-content context-loader-container">
+            <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
+              {% if render_title and filename %}
+                <h3>
+                  <span class="octicon octicon-book"></span>
+                  {{ filename }}
+                </h3>
+              {% endif %}
+              <div class="markdown-body entry-content">
+                {{ content|safe }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+  <div>&nbsp;</div>
+{%- endblock -%}

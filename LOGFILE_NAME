@@ -1,0 +1,34 @@
+[Mon May 23 2016 02:31:53 GMT-0700 (PDT)] DEBUG Loading adapter slack
+[Mon May 23 2016 02:31:53 GMT-0700 (PDT)] INFO Connecting...
+[Mon May 23 2016 02:31:53 GMT-0700 (PDT)] ERROR Error: listen EADDRINUSE 0.0.0.0:8080
+  at Object.exports._errnoException (util.js:870:11)
+  at exports._exceptionWithHostPort (util.js:893:20)
+  at Server._listen2 (net.js:1237:14)
+  at listen (net.js:1273:10)
+  at net.js:1382:9
+  at nextTickCallbackWith3Args (node.js:452:9)
+  at process._tickCallback (node.js:358:17)
+
+[Mon May 23 2016 02:31:55 GMT-0700 (PDT)] INFO Logged in as rewardsuperman of Meet2San, but not yet connected
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] INFO Slack client now connected
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Loading scripts from /home/bexadmin/myhubot/scripts
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/scripts/example.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/scripts/hello.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/scripts/jenkins.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/scripts/jenkins_notifier.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] INFO /home/bexadmin/myhubot/scripts/jenkins_notifier.coffee is using deprecated documentation syntax
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/scripts/jira.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Loading scripts from /home/bexadmin/myhubot/src/scripts
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Loading external-scripts from npm packages
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-diagnostics/src/diagnostics.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-help/src/help.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-google-images/src/google-images.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-google-translate/src/google-translate.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-pugme/src/pugme.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-maps/src/maps.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] INFO hubot-redis-brain: Using default redis on localhost:6379
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-redis-brain/src/redis-brain.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-rules/src/rules.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG Parsing help for /home/bexadmin/myhubot/node_modules/hubot-shipit/src/shipit.coffee
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] DEBUG hubot-redis-brain: Successfully connected to Redis
+[Mon May 23 2016 02:31:57 GMT-0700 (PDT)] INFO hubot-redis-brain: Data for hubot brain retrieved from Redis
